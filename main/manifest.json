@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "register words to Anki",
+  "short_name": "regAnki",
+  "version": "1.0",
+  "description": "Easely register word to Anki on Google Chrome",
+
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+    },
+  "content_scripts": [
+    {
+      "matches": ["https://ejje.weblio.jp/content/*"],
+      "js": ["content_script.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "permissions": [
+    "activeTab",
+    "contextMenus"
+  ],
+  "host_permissions": [
+        "http://127.0.0.1:8765/"
+    ]
+}
